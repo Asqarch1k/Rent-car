@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 60px;
+  border: 1px solid red;
+  background: #f6f7f9;
+}
+
+.df {
+  display: flex;
+}
+
+.m-top {
+  margin-top: 32px;
+}
+
+.m-bot-64 {
+  margin-bottom: 64px;
+}
+.m-bot-24 {
+  margin-bottom: 24px;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.jc-sa {
+  justify-content: space-around;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.column {
+  flex-direction: column;
+}
+.gap-40 {
+  gap: 40px;
+}
+.gap-20 {
+  gap: 20px;
+}
+.gap-6 {
+  gap: 6px;
+}
+
+.gap-16 {
+  gap: 16px;
+}
+
+.gap-64 {
+  gap: 64px;
+}
+
+.btn {
+  width: 120px;
+  height: 44px;
+  padding: 0px 20px;
+  border-radius: 4px;
+  background: var(--primary-500, #3563e9);
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-family: Plus Jakarta Sans;
+  font-size: 16px;
+}
+.btn:active {
+  transform: scale(0.9);
+}
+@media (max-width: 1000px) {
+  .container {
+    max-width: 1000px;
+    padding: 0 100px;
+    margin: 0 auto;
+  }
+
+  .headerLogos {
+    display: flex;
+    flex-direction: column;
+    /* margin: 0 auto; */
+  }
+
+  .headerCar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .datesAndLoc {
+    display: flex;
+    flex-direction: column;
+  }
+}
