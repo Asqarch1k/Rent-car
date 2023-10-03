@@ -18,8 +18,8 @@ const RentCarBox = ({
     setIsLiked(!isLiked);
   };
   const iconClass = isLiked
-    ? "fa-solid fa-heart likeIcon"
-    : "fa-regular fa-heart";
+    ? "fa-regular fa-heart"
+    : "fa-solid fa-heart likeIcon";
   return (
     <div className="carsBox">
       <div className="likeIcons">
@@ -65,9 +65,9 @@ const RentCarBox = ({
   );
 };
 
-const RentCars = () => {
+const RentCars = ({ ...props }) => {
   return (
-    <div className="popularCar">
+    <div {...props}>
       {CarsInform.map((Servis, idx) => (
         <RentCarBox key={idx} {...Servis} />
       ))}

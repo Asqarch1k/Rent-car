@@ -2,13 +2,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 
+.wraperr{
+  /* overflow: hidden; */
+}
 .container {
   max-width: 1440px;
-  padding: 0 60px;
+  padding: 0 64px;
   border: 1px solid red;
   background: #f6f7f9;
+  margin: 0 auto;
+  overflow: hidden;
+  /* overflow-y: scroll; */
 }
 
 .df {
@@ -24,6 +32,9 @@
 }
 .m-bot-24 {
   margin-bottom: 24px;
+}
+.m-bot-64 {
+  margin-bottom: 36px;
 }
 
 .jc-sb {
@@ -60,7 +71,6 @@
 }
 
 .btn {
-  width: 120px;
   height: 44px;
   padding: 0px 20px;
   border-radius: 4px;
@@ -70,14 +80,28 @@
   color: #fff;
   font-family: Plus Jakarta Sans;
   font-size: 16px;
+  white-space: nowrap;
 }
 .btn:active {
   transform: scale(0.9);
 }
-@media (max-width: 1000px) {
+
+
+@media (max-width: 375px) {
+  .headerCard1{
+    display: none;
+  }
+
+  .footerTop{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1060px) {
   .container {
     max-width: 1000px;
-    padding: 0 100px;
+    /* padding: 0 100px; */
     margin: 0 auto;
   }
 
@@ -96,4 +120,17 @@
     display: flex;
     flex-direction: column;
   }
+
+  /* .recomendedCar {
+    display: grid;
+    grid-template-columns: repeat(3, 102px);
+    gap: 32px;
+  } */
+}
+
+@media (max-width: 1330px) {
+  /* .recomendedCar {
+    display: grid;
+    grid-template-columns: repeat(3, 102px);
+  } */
 }

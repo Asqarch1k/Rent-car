@@ -28,6 +28,7 @@
 
 .header {
   padding: 40px 0;
+  position: relative;
 }
 .headerLogo {
   max-width: 148px;
@@ -42,6 +43,8 @@
   opacity: 0.8;
   padding: 0 13px;
   cursor: pointer;
+  width: 44px;
+  height: 44px;
 }
 
 .likeBtn:active {
@@ -94,6 +97,7 @@
   border: none;
   outline: none;
   color: #90a3bf;
+  cursor: pointer;
 }
 
 .SelectCity option {
@@ -166,11 +170,15 @@
   color: red;
 }
 
+.likeIcon:hover {
+  cursor: pointer;
+}
+
 .likeIcons {
   position: absolute;
   right: 24px;
   top: 24px;
-font-size: 25px;
+  font-size: 25px;
 }
 .typeText {
   width: 128px;
@@ -218,5 +226,123 @@ font-size: 25px;
   display: flex;
   overflow-y: auto;
   gap: 32px;
-  margin-top: 80px;
+}
+
+.popularCar::-webkit-scrollbar {
+  display: none;
+}
+
+.recomendedCar {
+  max-width: 1312px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* grid-template-columns: repeat(4, 302px); */
+  gap: 32px;
+}
+
+.PopularCarText {
+  color: #90a3bf;
+  font-family: Plus Jakarta Sans;
+  font-size: 16px;
+  margin-top: 42px;
+  margin-bottom: 30px;
+}
+
+.showMoreBtn {
+  margin: 64px 642px;
+}
+
+.OurVisionText {
+  max-width: 292px;
+  color: rgba(19, 19, 19, 0.6);
+  font-family: Plus Jakarta Sans;
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.aboutText {
+  margin-bottom: 24px;
+}
+
+.aboutText:active {
+  transform: scale(0.9);
+}
+
+.aboutText a {
+  color: #1a202c;
+  font-family: Plus Jakarta Sans;
+  font-size: 20px;
+}
+
+ul li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+ul li a {
+  color: rgba(19, 19, 19, 0.6);
+  font-family: Plus Jakarta Sans;
+  font-size: 16px;
+}
+
+.footer {
+  padding: 60px;
+  background-color: #fff;
+}
+
+.footerText {
+  color: var(--secondary-500, #1a202c);
+  font-family: Plus Jakarta Sans;
+  font-size: 16px;
+}
+
+.modalCard {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(19, 19, 19, 0.6);
+}
+
+.modalCard .boxsModal {
+  width: 600px;
+  height: 400px;
+  background-color: white;
+  margin-left: 300px;
+  margin-top: 200px;
+  border-radius: 20px;
+  overflow: auto;
+  margin: 300px auto;
+}
+
+.modalCard .boxsModal::-webkit-scrollbar {
+  display: none;
+}
+.headerModal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+}
+
+.boxsModal {
+  position: relative;
+  padding: 20px 30px;
+}
+
+.boxsModal .xButton {
+  content: "";
+  cursor: pointer;
+  width: 30px;
+  height: 40px;
+  border-radius: 30px;
+  padding-left: 6px;
+  position: absolute;
+  display: block;
+  right: 5px;
+  top: 5px;
+  color: red;
+  font-size: 35px;
+  background-color: #54a6ff;
 }

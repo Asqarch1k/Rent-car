@@ -79,20 +79,12 @@ const CarsInform = [
     name: "Nissan GT - R",
     type: "Sport",
     petrol: "90L",
-    img: cars7,
+    img: cars10,
     manual: "Manual",
     people: "2 People",
     nowPrise: "$99.00/",
   },
-  {
-    name: "Nissan GT - R",
-    type: "Sport",
-    petrol: "90L",
-    img: cars8,
-    manual: "Manual",
-    people: "2 People",
-    nowPrise: "$99.00/",
-  },
+
 ];
 
 export default CarsInform;
