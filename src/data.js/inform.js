@@ -11,6 +11,7 @@ import cars10 from "../../images/Car (10).png";
 
 const CarsInform = [
   {
+    id: 1,
     name: "Koenigsegg",
     type: "Sport",
     petrol: "90L",
@@ -20,6 +21,7 @@ const CarsInform = [
     nowPrise: "$99.00/",
   },
   {
+    id: 2,
     name: "Nissan GT - R",
     type: "Sport",
     petrol: "90L",
@@ -29,6 +31,7 @@ const CarsInform = [
     nowPrise: "$99.00/",
   },
   {
+    id: 3,
     name: "Nissan GT - R",
     type: "Sport",
     img: cars2,
@@ -39,6 +42,7 @@ const CarsInform = [
     oldPrise: "$100.00",
   },
   {
+    id: 4,
     name: "Nissan GT - R",
     type: "Sport",
     petrol: "90L",
@@ -48,6 +52,7 @@ const CarsInform = [
     nowPrise: "$99.00/",
   },
   {
+    id: 5,
     name: "Nissan GT - R",
     type: "Sport",
     img: cars4,
@@ -58,6 +63,7 @@ const CarsInform = [
     oldPrise: "$100.00",
   },
   {
+    id: 6,
     name: "Nissan GT - R",
     type: "Sport",
     petrol: "90L",
@@ -67,6 +73,7 @@ const CarsInform = [
     nowPrise: "$99.00/",
   },
   {
+    id: 7,
     name: "Nissan GT - R",
     type: "Sport",
     petrol: "90L",
@@ -76,6 +83,7 @@ const CarsInform = [
     nowPrise: "$99.00/",
   },
   {
+    id: 8,
     name: "Nissan GT - R",
     type: "Sport",
     petrol: "90L",
@@ -84,7 +92,6 @@ const CarsInform = [
     people: "2 People",
     nowPrise: "$99.00/",
   },
-
 ];
 
 export default CarsInform;

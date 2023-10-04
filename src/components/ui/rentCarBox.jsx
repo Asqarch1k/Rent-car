@@ -1,9 +1,9 @@
 import { useState } from "react";
-import CarsInform from "../../data.js/inform";
+// import CarsInform from "../../data.js/inform";
 import "../../../style/style.css";
 import "../../../style/main.css";
 import Button from "./button";
-const RentCarBox = ({
+export const RentCarBox = ({
   name,
   type,
   petrol,
@@ -12,27 +12,26 @@ const RentCarBox = ({
   nowPrise,
   oldPrise,
   img,
+  id,
+  changeLiked,
+  isLiked,
 }) => {
-  const [isLiked, setIsLiked] = useState(true);
-  const toggleLike = () => {
-    setIsLiked(!isLiked);
-  };
-  const iconClass = isLiked
-    ? "fa-regular fa-heart"
-    : "fa-solid fa-heart likeIcon";
+  const iconClass = !isLiked
+    ? "fa-solid fa-heart "
+    : "fa-solid fa-heart likeIcon1";
   return (
     <div className="carsBox">
       <div className="likeIcons">
-        <i className={iconClass} onClick={toggleLike}></i>
+        <i className={iconClass} onClick={() => changeLiked(id)}></i>
       </div>
       <h1 className="nameText ">{name}</h1>
       <p className="typeText m-bot-64">{type}</p>
-      <img src={img} alt="" className="m-bot-64" />
+      <img src={img} alt="" className="m-bot-64 mainCarPhoto" />
       <div className="df gap-16 m-bot-24">
         <div className="df gap-6">
           {" "}
           <div>
-            <i class="fa-solid fa-gas-pump colors1"></i>
+            <i className="fa-solid fa-gas-pump colors1"></i>
           </div>
           <span className="colors1">{petrol}</span>
         </div>
@@ -46,7 +45,7 @@ const RentCarBox = ({
         <div className="df gap-6">
           {" "}
           <div>
-            <i class="fa-solid fa-user-group colors1"></i>
+            <i className="fa-solid fa-user-group colors1"></i>
           </div>
           <span className="colors1">{people}</span>
         </div>
@@ -65,11 +64,16 @@ const RentCarBox = ({
   );
 };
 
-const RentCars = ({ ...props }) => {
+const RentCars = ({ users, isLiked, changeLiked, ...props }) => {
   return (
     <div {...props}>
-      {CarsInform.map((Servis, idx) => (
-        <RentCarBox key={idx} {...Servis} />
+      {users?.map((Servis, idx) => (
+        <RentCarBox
+          isLiked={isLiked}
+          changeLiked={changeLiked}
+          key={idx}
+          {...Servis}
+        />
       ))}
     </div>
   );

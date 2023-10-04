@@ -6,7 +6,7 @@
   text-decoration: none;
 }
 
-.wraperr{
+.wraperr {
   /* overflow: hidden; */
 }
 .container {
@@ -16,7 +16,6 @@
   background: #f6f7f9;
   margin: 0 auto;
   overflow: hidden;
-  /* overflow-y: scroll; */
 }
 
 .df {
@@ -86,13 +85,12 @@
   transform: scale(0.9);
 }
 
-
 @media (max-width: 375px) {
-  .headerCard1{
+  .headerCard1 {
     display: none;
   }
 
-  .footerTop{
+  .footerTop {
     display: flex;
     flex-direction: column;
   }

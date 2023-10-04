@@ -10,7 +10,7 @@ function Sidebar({ users, handleClickUserAccount, handleSearch, deleteUser }) {
           onChange={(e) => handleSearch(e.target.value)}
         />
       </div>
-      {!users.length
+      {!users?.length
         ? "No Contact"
         : users.map((user) => (
             <CarsInform

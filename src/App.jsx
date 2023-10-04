@@ -3,19 +3,39 @@ import Button from "./components/ui/button";
 import profilFotos from "../images/profilFoto.svg";
 import whiteCar from "../images/image 7.png";
 import whiteCar1 from "../images/image 8.png";
-import RentCars from "./components/ui/rentCarBox";
+import RentCars, { RentCarBox } from "./components/ui/rentCarBox";
 import Module from "./components/modals";
-import Sidebar from "./components/search";
+import CarsInform from "./data.js/inform";
+
 const App = () => {
   const [showModal, setShowModal] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
+  const [users, setUsers] = useState(CarsInform);
+  const [search, setSearch] = useState("");
+  // const [isLiked, setIsLiked] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+
   const hideModal = () => {
     setShowModal(false);
   };
+
+  const changeLiked = (id) => {
+    const currentElIdx = users.findIndex((car) => car.id === id);
+    users[currentElIdx] = {
+      ...users[currentElIdx],
+      isLiked: !Boolean(users[currentElIdx].isLiked),
+    };
+    setUsers([...users]);
+  };
+
   return (
     <>
       {showModal && (
-        <Module hideModal={hideModal} className="modalCard wrapper" />
+        <Module
+          users={users}
+          setUsers={setUsers}
+          hideModal={hideModal}
+          className="modalCard wrapper"
+        />
       )}
       <div className="wraperr">
         <div className="container">
@@ -23,40 +43,57 @@ const App = () => {
             <div className="df gap-64 headerLogos">
               <h1 className="headerLogo">MORENT</h1>
               <div className="df inputValue">
-                <i class="fa-solid fa-magnifying-glass searchIcon"></i>
-                <input type="text" placeholder="Search something here" />
-                <i class="fa-solid fa-sliders searchIcon"></i>
+                <i className="fa-solid fa-magnifying-glass searchIcon"></i>
+
+                {/* <input type="text" placeholder="Search something here" /> */}
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Search something here"
+                    value={searchTerm}
+                    onChange={(e) => {
+                      setSearchTerm(e.target.value);
+                    }}
+                  />
+                  <ul className="ulli">
+                    {CarsInform.filter((user) =>
+                      user.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    ).map((car) => (
+                      <RentCarBox
+                        name={car.name}
+                        type={car.type}
+                        petrol={car.petrol}
+                        manual={car.manual}
+                        people={car.people}
+                        nowPrise={car.nowPrise}
+                        oldPrise={car.oldPrise}
+                        img={car.img}
+                        // changeLiked={changeLiked}
+                        // isLiked={isLiked}
+                      />
+                    ))}
+                  </ul>
+                </div>
+                <i className="fa-solid fa-sliders searchIcon"></i>
               </div>
             </div>
-
             <div className="df gap-20">
-              <button className="likeBtn" onClick={() => setShowModal(true)}>
-                <i class="fa-solid fa-heart likeBtnColor"></i>
+              <button
+                className="likeBtn modul"
+                onClick={() => setShowModal(true)}
+              >
+                <i className="fa-solid fa-heart likeBtnColor"></i>
               </button>
               <button className="likeBtn">
-                <i class="fa-solid fa-bell likeBtnColor"></i>
+                <i className="fa-solid fa-bell likeBtnColor"></i>
               </button>
               <button className="likeBtn">
-                <i class="fa-solid fa-gear likeBtnColor"></i>
+                <i className="fa-solid fa-gear likeBtnColor"></i>
               </button>
               <img src={profilFotos} alt="" />
             </div>
           </div>
 
-          {/* <Sidebar
-          users={
-            !search.length
-              ? users
-              : users.filter((user) =>
-                  user.name
-                    .toLocaleLowerCase()
-                    .includes(search.trim().toLocaleLowerCase())
-                )
-          }
-          handleClickUserAccount={handleClickUserAccount}
-          handleSearch={handleSearch}
-          deleteUser={deleteUser}
-        /> */}
           <div className="headerCar df jc-sa">
             <div className="headerCard">
               <h1 className="TheBestText">The Best Platform for Car Rental</h1>
@@ -76,11 +113,12 @@ const App = () => {
                 Providing cheap car rental services and safe and comfortable
                 facilities.
               </p>
-              <Button text={"Rental Car"} type={"btn"} />
+              <Button text={"Rental Car"} type={"btn secondBtn"} />
               <br />
               <img src={whiteCar1} alt="" />
             </div>
           </div>
+
           <div className="df jc-sb align-center m-top datesAndLoc">
             <div className="locationDate df">
               <div>
@@ -135,7 +173,7 @@ const App = () => {
               </div>
             </div>
             <div className="middleArrow">
-              <i class="fa-solid fa-arrow-right-arrow-left fa-rotate-90 swapIcon"></i>
+              <i className="fa-solid fa-arrow-right-arrow-left fa-rotate-90 swapIcon"></i>
             </div>
             <div className="locationDate df">
               <div>
@@ -192,12 +230,21 @@ const App = () => {
           </div>
           <p className="PopularCarText">Popular Car</p>
           <div>
-            <RentCars className="popularCar" />
+            <RentCars
+              users={users}
+              changeLiked={changeLiked}
+              className="popularCar"
+            />
           </div>
           <p className="PopularCarText">Recomendation Car</p>
           <div>
-            <RentCars className="recomendedCar" />
+            <RentCars
+              users={users}
+              changeLiked={changeLiked}
+              className="recomendedCar"
+            />
           </div>
+
           <div>
             <Button text={"Show more car"} type={"btn  showMoreBtn"} />
           </div>

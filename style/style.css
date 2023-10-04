@@ -7,6 +7,7 @@
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 5px;
 }
 
 .inputValue input {
@@ -14,6 +15,7 @@
   outline: none;
   margin-left: 20px;
   margin-right: 235px;
+
 }
 
 .inputValue input::placeholder {
@@ -59,9 +61,10 @@
   width: 640px;
   height: 360px;
   border-radius: 10px;
-  background: var(--information-500, #54a6ff);
+  /* background: var(--information-500, #54a6ff); */
   padding-top: 24px;
   padding-left: 24px;
+  background-image: url(../images/bgImage1.png);
 }
 
 .TheBestText {
@@ -74,6 +77,14 @@
   line-height: 150%; /* 48px */
   letter-spacing: -0.96px;
   margin-bottom: 20px;
+}
+
+.headerCard1 {
+  background-image: url(../images/bgImage2.png);
+}
+
+.secondBtn {
+  background-color: #54a6ff;
 }
 
 .EaseOfText {
@@ -152,6 +163,12 @@
   position: relative;
 }
 
+.carsBox:hover {
+  border-top: 5px solid lime;
+  border-bottom: 3px solid lime;
+  max-height: 398px;
+}
+
 .carsBox img {
   width: 232px;
   height: 85px;
@@ -166,7 +183,7 @@
   font-style: normal;
 }
 
-.likeIcon {
+.likeIcon1 {
   color: red;
 }
 
@@ -315,6 +332,8 @@ ul li a {
   border-radius: 20px;
   overflow: auto;
   margin: 300px auto;
+  position: relative;
+  padding: 20px 30px;
 }
 
 .modalCard .boxsModal::-webkit-scrollbar {
@@ -326,9 +345,26 @@ ul li a {
   position: fixed;
 }
 
-.boxsModal {
-  position: relative;
-  padding: 20px 30px;
+.mainCarPhoto:hover {
+  transform: scale(1.1);
+  transition: 0.8s all ease;
+}
+
+.ulli {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  gap: 30px;
+  background-color: rgb(233, 231, 231);
+  margin-top: 30px;
+  border-radius: 20px;
+  display: none;
+}
+
+input:focus ~ .ulli {
+  display: flex;
 }
 
 .boxsModal .xButton {
@@ -339,10 +375,19 @@ ul li a {
   border-radius: 30px;
   padding-left: 6px;
   position: absolute;
-  display: block;
+  /* display: block; */
   right: 5px;
   top: 5px;
   color: red;
   font-size: 35px;
   background-color: #54a6ff;
+}
+
+.secondModalBox {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.secondModalBox::-webkit-scrollbar {
+  display: none;
 }
