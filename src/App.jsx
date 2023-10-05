@@ -68,8 +68,6 @@ const App = () => {
                         nowPrise={car.nowPrise}
                         oldPrise={car.oldPrise}
                         img={car.img}
-                        // changeLiked={changeLiked}
-                        // isLiked={isLiked}
                       />
                     ))}
                   </ul>
@@ -78,25 +76,29 @@ const App = () => {
               </div>
             </div>
             <div className="df gap-20">
-              <button
-                className="likeBtn modul"
-                onClick={() => setShowModal(true)}
-              >
-                <i className="fa-solid fa-heart likeBtnColor"></i>
-              </button>
-              <button className="likeBtn">
-                <i className="fa-solid fa-bell likeBtnColor"></i>
-              </button>
-              <button className="likeBtn">
-                <i className="fa-solid fa-gear likeBtnColor"></i>
-              </button>
-              <img src={profilFotos} alt="" />
+              <div className="df gap-20 likesection">
+                <button
+                  className="likeBtn modul"
+                  onClick={() => setShowModal(true)}
+                >
+                  <i className="fa-solid fa-heart likeBtnColor"></i>
+                </button>
+                <button className="likeBtn">
+                  <i className="fa-solid fa-bell likeBtnColor"></i>
+                </button>
+                <button className="likeBtn">
+                  <i className="fa-solid fa-gear likeBtnColor"></i>
+                </button>
+              </div>
+              <div>
+                <img src={profilFotos} alt="" />
+              </div>
             </div>
           </div>
 
           <div className="headerCar df jc-sa">
             <div className="headerCard">
-              <h1 className="TheBestText">The Best Platform for Car Rental</h1>
+              <h5 className="TheBestText">The Best Platform for Car Rental</h5>
               <p className="EaseOfText">
                 Ease of doing a car rental safely and reliably. Of course at a
                 low price.
@@ -124,7 +126,7 @@ const App = () => {
               <div>
                 <input type="radio" /> <span className="drops">Pick - Up</span>
               </div>
-              <div className="df gap-40">
+              <div className="df selectCity">
                 <div>
                   {" "}
                   <h3 className="LocationTExt">Locations</h3>
@@ -179,7 +181,7 @@ const App = () => {
               <div>
                 <input type="radio" /> <span className="drops">Drop - Off</span>
               </div>
-              <div className="df gap-40">
+              <div className="df selectCity">
                 <div>
                   {" "}
                   <h3 className="LocationTExt">Locations</h3>
@@ -257,7 +259,7 @@ const App = () => {
                   sales business.
                 </p>
               </div>
-              <div className="df gap-64">
+              <div className=" footerrigtsec">
                 <div>
                   <h2 className="aboutText">
                     <a href="#0">About</a>
@@ -303,9 +305,9 @@ const App = () => {
               </div>
             </div>
             <hr />
-            <div className="df jc-sb m-top">
-              <div>
-                <p className="footerText">©2022 MORENT. All rights reserved</p>
+            <div className="df jc-sb m-top footerMal">
+              <div className="footerText">
+                <p>©2022 MORENT. All rights reserved</p>
               </div>
               <div className="df gap-64">
                 <p className="footerText">Privacy & Policy</p>

@@ -43,7 +43,7 @@ const CarsInform = [
   },
   {
     id: 4,
-    name: "Nissan GT - R",
+    name: "All New Terios",
     type: "Sport",
     petrol: "90L",
     img: cars3,
@@ -53,7 +53,7 @@ const CarsInform = [
   },
   {
     id: 5,
-    name: "Nissan GT - R",
+    name: "MG ZX Exclusice",
     type: "Sport",
     img: cars4,
     petrol: "80L",
@@ -64,7 +64,7 @@ const CarsInform = [
   },
   {
     id: 6,
-    name: "Nissan GT - R",
+    name: "New MG ZS",
     type: "Sport",
     petrol: "90L",
     img: cars5,
@@ -74,7 +74,7 @@ const CarsInform = [
   },
   {
     id: 7,
-    name: "Nissan GT - R",
+    name: "MG ZX Excite",
     type: "Sport",
     petrol: "90L",
     img: cars6,
@@ -84,7 +84,7 @@ const CarsInform = [
   },
   {
     id: 8,
-    name: "Nissan GT - R",
+    name: "New MG ZS",
     type: "Sport",
     petrol: "90L",
     img: cars10,

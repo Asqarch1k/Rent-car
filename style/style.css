@@ -58,7 +58,7 @@
 }
 
 .headerCard {
-  width: 640px;
+  max-width: 640px !important;
   height: 360px;
   border-radius: 10px;
   /* background: var(--information-500, #54a6ff); */
@@ -114,6 +114,10 @@
 .SelectCity option {
   font-family: Plus Jakarta Sans;
   font-size: 12px;
+}
+
+.selectCity{
+  gap: 40px;
 }
 
 .locationDate {
@@ -309,10 +313,11 @@ ul li a {
   background-color: #fff;
 }
 
-.footerText {
+.footerText p {
   color: var(--secondary-500, #1a202c);
   font-family: Plus Jakarta Sans;
   font-size: 16px;
+  white-space: nowrap;
 }
 
 .modalCard {
@@ -390,4 +395,19 @@ input:focus ~ .ulli {
 
 .secondModalBox::-webkit-scrollbar {
   display: none;
+}
+
+.footerrigtsec{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+}
+
+.footerTop{
+  flex-wrap: wrap;
+  gap: 48px;
+}
+
+.footerMal{
+  flex-wrap: wrap;
 }

@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import CarsInform from "../../data.js/inform";
 import "../../../style/style.css";
 import "../../../style/main.css";
 import Button from "./button";
